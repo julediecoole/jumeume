@@ -1,0 +1,145 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-size: cover;
+    background-position: center;
+    text-transform: lowercase;
+  }
+    
+    body {
+      /* background-color: #043AD6; */
+      
+    background-repeat: no-repeat, no-repeat;
+    background-position: left center, right center;
+    background-size: contain, contain; /* oder z. B. 300px auto */
+      color: white;
+      font-family: 'Mansalva';
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      text-transform: lowercase;
+    }
+
+    .orange{
+      background-color:#F26722;
+      color: black;
+    }
+    .blue{
+      background-color:#043AD6;
+    color:black;
+    
+    }
+
+
+    header {
+        background-color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .header-content h1 {
+        margin-bottom: 0px; 
+        font-size: 24px;
+        color: #F26722;
+        font-family: Sukhumvit Set;
+      }
+      
+      .header-content p {
+        margin-top: 0;
+        font-size: 13px;
+        color: #F26722;
+        font-family: Sukhumvit Set;
+      }
+   
+
+    h1 {
+      color: white;
+      margin-bottom: 40px;
+    }
+
+    #truth {
+      font-size: 70px;
+      margin: 80px;
+      max-width: 55%;
+      height: 444px;
+      display: flex;
+      align-items: center;
+    }
+
+    #nextBtn {
+      margin-top: 40px;
+      margin-bottom: 60px;
+      padding: 16px 32px;
+      font-size: 24px;
+      font-family: 'Mansalva';
+      border: 2px solid white;
+      background: transparent;
+      border-radius: 50px;
+      color: white;
+      cursor: pointer;
+      text-transform: lowercase;
+      
+    }
+
+
+    #nextBtn:hover {
+      background: white;
+      color: #043AD6;
+    }
+      
+      footer a:hover {
+        text-decoration: underline;
+
+        
+    /* Animation */
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+      
+      .hidden {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(10px); /* Button gleitet leicht nach unten beim Ausblenden */
+      }
+
+      .hidden {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      
+    }
+      
+      
+
+footer a {
+ 
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+    text-transform: lowercase;
+    color: white;
+    text-align: center;
+    padding: 0 40px;
+
+  }
+      
+
+  footer {
+    position: absolute;
+    bottom: 20px;
+  }

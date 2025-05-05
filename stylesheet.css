@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body Style */
+body {
+  background-repeat: no-repeat, no-repeat;
+  background-position: left center, right center;
+  background-size: contain, contain;
+  color: white;
+  font-family: "Mansalva";
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+/* BG-Style */
+.backgroundblue {
+  background-color: #043ad6;
+  background-image: url("svgs/handsleftorange.svg"),
+    url("svgs/handsrightorange.svg");
+}
+
+.backgroundorange {
+  background-color: #ff6c0a;
+  background-image: url("svgs/handsleftblue.svg"),
+    url("svgs/handsrightblue.svg");
+}
+
+/* Main */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background-size: cover;
+  background-position: center;
+  text-transform: lowercase;
+}
+
+/* Header */
+header {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-content h1 {
+  margin-bottom: 0;
+  font-size: 24px;
+  color: #f26722;
+  font-family: Sukhumvit Set;
+  font-weight: bold;
+}
+
+.header-content p {
+  margin-top: 0;
+  font-size: 13px;
+  color: #f26722;
+  font-family: Sukhumvit Set;
+  font-weight: bold;
+}
+
+/* Tab-Stile */
+.tab {
+  position: relative;
+  appearance: none;
+  background: transparent;
+  border: none;
+  height: 53px;
+  font-family: "sukhumvit set";
+  font-weight: bold;
+  font-size: 13px;
+  color: white;
+  text-transform: lowercase;
+}
+
+.tabs {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.tab-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Active Tab */
+.tab.active {
+  z-index: 2;
+}
+
+/* Button */
+#nextBtn {
+  margin-top: 40px;
+  margin-bottom: 60px;
+  padding: 16px 32px;
+  font-size: 24px;
+  font-family: "Mansalva";
+  border: 2px solid white;
+  background: transparent;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  text-transform: lowercase;
+}
+
+#nextBtn:hover {
+  background: white;
+  color: #043ad6;
+}
+
+/* Truth-Stile */
+#truth {
+  font-size: 70px;
+  margin: 80px;
+  max-width: 55%;
+  height: 444px;
+  display: flex;
+  align-items: center;
+}
+
+/* Footer */
+footer {
+  position: absolute;
+  bottom: 20px;
+}
+
+footer a {
+  font-size: 12px;
+  color: white;
+  text-decoration: none;
+  text-transform: lowercase;
+  text-align: center;
+  padding: 0 40px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  /* Animation */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Versteckte Elemente (für Animationen oder Sichtbarkeit) */
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px); /* Button gleitet leicht nach unten beim Ausblenden */
+  transition: opacity 0.3s ease;
+}
