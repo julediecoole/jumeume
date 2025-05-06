@@ -105,6 +105,15 @@ header {
   font-family: Sukhumvit Set;
   font-weight: bold;
 }
+.logo-link {
+  text-decoration: none;
+  color: #f26722;
+  font-family: Sukhumvit Set;
+  font-weight: bold;
+}
+.logo-link:hover {
+  text-decoration: none;
+}
 
 /* Tab-Stile */
 .tab {
