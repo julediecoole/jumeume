@@ -200,6 +200,24 @@ footer a:hover {
   transform: translateY 10px;
 }
 
+footer {
+  bottom: 20px;
+  left: 10px;
+  z-index: 10;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  font-family: "sukhumvit set";
+  font-size: 18px;
+  font-weight: normal;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
 /* Team-Section */
 
 .team-members {
