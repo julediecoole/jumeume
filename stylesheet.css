@@ -252,17 +252,17 @@ footer a:hover {
 .team-members {
   display: flex;
   justify-content: center;
-  gap: 100px; /* Abstand zwischen den Team-Mitgliedern */
+  gap: 150px; /* Abstand zwischen Team */
   margin-bottom: 40px;
 }
 
-/* Einzelnes Team-Mitglied */
+/* Einzelnes Mitglied */
 .team-member {
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  text-align: center; 
+  text-align: center;
   color: white;
   font-family: "sukhumvit set";
 }
@@ -270,21 +270,20 @@ footer a:hover {
 /* Team-Bilder */
 .team-member img {
   width: 140px;
-  height: auto;
-  margin-bottom: 20px; /* Abstand zwischen Bild und Text */
+  height: 300px;
+  margin-bottom: 10px; /* Abstand Bild und Text */
 }
 
-/* Team-Infos (Name und Beschreibung) */
+/* (Name und Beschreibung) */
 .team-info {
-  text-align: center; 
+  text-align: center;
 }
 
 /* Name */
 .team-info h2 {
   font-size: 40px;
-  margin-bottom: 5px;
-  margin-top: 15px; 
-  font-weight: bold;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 /* Beschreibung */
@@ -294,10 +293,10 @@ footer a:hover {
   font-weight: normal;
 }
 
-/* Button: Zurück zur Homepage */
+/* Button Homepage */
 .homepageBtn {
   display: block;
-  margin: 90px auto 30px; /* viel weiter unten */
+  margin: 50px auto 30px;
   padding: 6px 32px;
   font-size: 24px;
   font-family: "sukhumvit set";
