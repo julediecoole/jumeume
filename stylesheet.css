@@ -115,7 +115,6 @@ header {
   text-decoration: none;
 }
 
-/* Tab-Stile */
 .tab {
   position: relative;
   appearance: none;
@@ -123,10 +122,16 @@ header {
   border: none;
   height: 53px;
   font-family: "sukhumvit set";
-  font-weight: bold;
-  font-size: 13px;
+  font-weight: normal;
+  font-size: 20px;
   color: white;
   text-transform: lowercase;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tab:hover .tab-text {
+  text-decoration: underline; /* Hover-Effekt */
 }
 
 .tabs {
@@ -141,6 +146,7 @@ header {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  text-decoration: none;
 }
 
 /* Active Tab */
@@ -186,7 +192,6 @@ footer {
 }
 
 footer a {
-  font-size: 20px;
   color: white;
   text-decoration: none;
   text-transform: lowercase;
@@ -219,7 +224,7 @@ footer a {
   color: white;
   text-decoration: none;
   font-family: "sukhumvit set";
-  font-size: 18px;
+  font-size: 20px;
   font-weight: normal;
 }
 
@@ -228,36 +233,71 @@ footer a:hover {
 }
 
 /* Team-Section */
+.team-section {
+  padding-top: 120px; /* Titel weiter oben */
+  text-align: center;
+}
 
+/* Titel "the team" */
+.team-section h1 {
+  font-size: 96px;
+  margin-bottom: 40px;
+  color: white;
+  font-family: "mansalva";
+  font-weight: normal;
+  text-transform: lowercase;
+}
+
+/* Team-Member-Container */
 .team-members {
   display: flex;
   justify-content: center;
-  gap: 300px;
+  gap: 100px; /* Abstand zwischen den Team-Mitgliedern */
   margin-bottom: 40px;
 }
 
+/* Einzelnes Team-Mitglied */
 .team-member {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: column; 
+  align-items: center; 
   justify-content: center;
+  text-align: center; 
+  color: white;
+  font-family: "sukhumvit set";
 }
 
+/* Team-Bilder */
 .team-member img {
-  width: 150px;
+  width: 140px;
   height: auto;
-  margin-bottom: 40px;
+  margin-bottom: 20px; /* Abstand zwischen Bild und Text */
 }
 
-.button-homepage:hover {
-  background-color: white;
-  color: #ff6c0a;
+/* Team-Infos (Name und Beschreibung) */
+.team-info {
+  text-align: center; 
 }
 
-/* Button back to homepage */
+/* Name */
+.team-info h2 {
+  font-size: 40px;
+  margin-bottom: 5px;
+  margin-top: 15px; 
+  font-weight: bold;
+}
+
+/* Beschreibung */
+.team-info h4 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: normal;
+}
+
+/* Button: Zurück zur Homepage */
 .homepageBtn {
-  margin-top: 40px;
-  margin-bottom: 60px;
+  display: block;
+  margin: 90px auto 30px; /* viel weiter unten */
   padding: 6px 32px;
   font-size: 24px;
   font-family: "sukhumvit set";
