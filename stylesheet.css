@@ -5,32 +5,41 @@
 }
 
 /* Body Style */
+:root {
+  font-size: 20px;
+}
+
 body {
   background-repeat: no-repeat, no-repeat;
-  background-position: left center, right center;
-  background-size: contain, contain;
+  background-position: left top, right bottom;
+  background-size: 50vw, 50vw;
   color: white;
   font-family: "Mansalva";
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   height: 100vh;
   text-align: center;
   text-transform: lowercase;
 }
 
+body.team {
+  background-position: left bottom, right bottom;
+  background-size: 30vw, 30vw;
+}
+
 /* Font */
 h1 {
-  font-size: 96px;
+  font-size: 4.8rem;
   color: white;
   font-family: "Mansalva";
   text-transform: lowercase;
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 1.5rem;
   color: white;
   font-family: "Mansalva";
   font-weight: normal;
@@ -38,7 +47,7 @@ h2 {
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 1.5rem;
   color: white;
   font-family: "sukhumvit set";
   font-weight: bold;
@@ -46,7 +55,7 @@ h3 {
 }
 
 h4 {
-  font-size: 20px;
+  font-size: 1rem;
   color: white;
   font-family: "sukhumvit set";
   font-weight: normal;
@@ -66,24 +75,15 @@ h4 {
     url("svgs/handsrightblue.svg");
 }
 
-/* Main */
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px;
-  background-size: cover;
-  background-position: center;
-}
-
 /* Header */
 header {
   background-color: white;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: 100px;
+  min-height: 100px;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -92,7 +92,7 @@ header {
 
 .header-content h1 {
   margin-bottom: 0;
-  font-size: 24px;
+  font-size: 1.2rem;
   color: #f26722;
   font-family: Sukhumvit Set;
   font-weight: bold;
@@ -100,7 +100,7 @@ header {
 
 .header-content p {
   margin-top: 0;
-  font-size: 13px;
+  font-size: 0.65rem;
   color: #f26722;
   font-family: Sukhumvit Set;
   font-weight: bold;
@@ -123,11 +123,15 @@ header {
   height: 53px;
   font-family: "sukhumvit set";
   font-weight: normal;
-  font-size: 20px;
+  font-size: 1rem;
   color: white;
   text-transform: lowercase;
   cursor: pointer;
   white-space: nowrap;
+}
+
+.tab svg {
+  height: 100%;
 }
 
 .tab:hover .tab-text {
@@ -154,12 +158,38 @@ header {
   z-index: 2;
 }
 
+#buttonblue {
+  position: relative;
+  right: -1rem;
+}
+
+/* Main */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  flex: 1;
+  height: 100%;
+}
+
+/* Truth-Stile */
+#truth {
+  font-size: 3.5rem;
+  max-width: 55%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 100%;
+}
+
 /* Button */
 #nextBtn {
-  margin-top: 40px;
-  margin-bottom: 60px;
   padding: 6px 32px;
-  font-size: 24px;
+  margin-bottom: 40px;
+  font-size: 1.2rem;
   font-family: "sukhumvit set";
   font-weight: bold;
   border: 5px solid white;
@@ -175,28 +205,27 @@ header {
   color: #043ad6;
 }
 
-/* Truth-Stile */
-#truth {
-  font-size: 70px;
-  margin: 80px;
-  max-width: 55%;
-  height: 444px;
-  display: flex;
-  align-items: center;
+/* Versteckte Elemente (für Animationen oder Sichtbarkeit) */
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY 10px;
 }
 
 /* Footer */
 footer {
-  position: absolute;
-  bottom: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  padding: 10px 30px;
 }
 
 footer a {
   color: white;
   text-decoration: none;
-  text-transform: lowercase;
-  text-align: right;
-  padding: 0 40px;
+  font-family: "sukhumvit set";
+  font-size: 1rem;
+  font-weight: normal;
 }
 
 footer a:hover {
@@ -207,40 +236,14 @@ footer a:hover {
   transform: translateY(0);
 }
 
-/* Versteckte Elemente (für Animationen oder Sichtbarkeit) */
-.hidden {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY 10px;
-}
-
-footer {
-  bottom: 20px;
-  left: 10px;
-  z-index: 10;
-}
-
-footer a {
-  color: white;
-  text-decoration: none;
-  font-family: "sukhumvit set";
-  font-size: 20px;
-  font-weight: normal;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
 /* Team-Section */
 .team-section {
-  padding-top: 120px; /* Titel weiter oben */
   text-align: center;
 }
 
 /* Titel "the team" */
 .team-section h1 {
-  font-size: 96px;
+  font-size: 3.45rem;
   margin-bottom: 40px;
   color: white;
   font-family: "mansalva";
@@ -269,8 +272,7 @@ footer a:hover {
 
 /* Team-Bilder */
 .team-member img {
-  width: 140px;
-  height: 300px;
+  height: 176px;
   margin-bottom: 10px; /* Abstand Bild und Text */
 }
 
@@ -281,14 +283,14 @@ footer a:hover {
 
 /* Name */
 .team-info h2 {
-  font-size: 40px;
+  font-size: 2rem;
   margin-bottom: 0px;
   margin-top: 0px;
 }
 
 /* Beschreibung */
 .team-info h4 {
-  font-size: 24px;
+  font-size: 1.2rem;
   margin: 0;
   font-weight: normal;
 }
@@ -298,7 +300,7 @@ footer a:hover {
   display: block;
   margin: 50px auto 30px;
   padding: 6px 32px;
-  font-size: 24px;
+  font-size: 1.2rem;
   font-family: "sukhumvit set";
   font-weight: bold;
   border: 5px solid white;
@@ -314,4 +316,50 @@ footer a:hover {
   background: white;
   color: #ff6c0a;
   text-decoration: none;
+}
+
+@media (max-width:1000px) {
+  :root {
+    font-size: 14px;
+  }
+  #truth {
+    font-size: 2rem;
+  }
+  body {
+    background-size: 70vw, 70vw;
+  }
+  body.team {
+    background-size: 60vw, 60vw;
+  }
+  .tab {
+    height: 30px;
+  } 
+  header {
+    justify-content: flex-start;
+    padding: 0 20px;
+  }
+  .team-members {
+    flex-direction: column;
+    gap: 20px; /* Abstand zwischen Team */
+  }
+  .team-member img {
+    height: 90px;
+  }
+  .team-section h1 {
+    margin-bottom: 20px;
+  }
+  .homepageBtn {
+    margin: 10px auto 10px;
+    padding: 0;
+    border: none;
+    text-decoration: underline;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  footer {
+    justify-content: center;
+  }
+  footer a {
+    text-decoration: underline;
+  }
 }
