@@ -2,6 +2,9 @@ let apiurl = 'https://api.truthordarebot.xyz/v1/truth';
 
 async function fetchTruth() {
     const button = document.getElementById('nextBtn');
+    // neu so?
+    const langSelect = document.getElementById('languageSelect');
+    const selectedLang = langSelect ? langSelect.value : 'en';
     
     try {
         // Button ausblenden
@@ -11,6 +14,10 @@ async function fetchTruth() {
         const response = await fetch(apiurl);
         const data = await response.json();
         document.querySelector('#truth p').textContent = data.question;
+
+        // neu so?
+        const translation = data.translations?.[selectedLang] || data.question;
+        document.querySelector('#truth p').textContent = translation;
   
         // Nach 2 Sekunden Button wieder anzeigen
         setTimeout(() => {
