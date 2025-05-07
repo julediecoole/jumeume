@@ -59,3 +59,20 @@ document.getElementById('buttonblue').addEventListener('click', activatebluemode
 
 // Initial load
 fetchTruth();
+
+window.onload = function () {
+  const popup = document.getElementById("popup");
+  const schliessen = document.querySelector(".schliessen-button");
+
+  popup.style.display = "block";
+
+  schliessen.onclick = function () {
+    popup.style.display = "none";
+  };
+
+  window.onclick = function (event) {
+    if (event.target === popup) {
+      popup.style.display = "none";
+    }
+  };
+};

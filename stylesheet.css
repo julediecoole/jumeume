@@ -318,6 +318,60 @@ footer a:hover {
   text-decoration: none;
 }
 
+/* Pop-up Overlay */
+.popup-fenster {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Pop-up Inhalt */
+.popup-inhalt {
+  background-color: white;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+  font-family: 'Sukhumvit Set', sans-serif;
+}
+
+/* Überschrift */
+.popup-inhalt h2 {
+  font-size: 24px;
+  color: black;
+  margin-bottom: 16px;
+}
+
+/* Text */
+.popup-inhalt p {
+  font-size: 16px;
+  color: #111;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* Schliessen-Button */
+.schliessen-button {
+  color: white;
+  background-color: #043ad6;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 0 0 0 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+
 @media (max-width:1000px) {
   :root {
     font-size: 14px;
