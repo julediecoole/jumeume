@@ -201,8 +201,13 @@ main {
 }
 
 #nextBtn:hover {
-  background: white;
   color: #043ad6;
+  border-color: #043ad6;
+}
+
+.backgroundblue #nextBtn:hover {
+  color: #f26722;
+  border-color: #043ad6;
 }
 
 /* Versteckte Elemente (für Animationen oder Sichtbarkeit) */
@@ -320,7 +325,8 @@ footer a:hover {
 
 /* Pop-up Overlay */
 .popup-fenster {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
   position: fixed;
   z-index: 2000;
   left: 0;
@@ -328,12 +334,20 @@ footer a:hover {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-fenster.show {
+  opacity: 1;
+  pointer-events: all;
 }
 
 /* Pop-up Inhalt */
 .popup-inhalt {
   background-color: white;
-  margin: 10% auto;
   padding: 30px;
   border-radius: 8px;
   width: 90%;
@@ -371,13 +385,16 @@ footer a:hover {
   top: 0;
   cursor: pointer;
 }
+#popup-mostlikelyto .schliessen-button {
+  background-color: #ff6c0a;
+}
 
 @media (max-width:1000px) {
   :root {
     font-size: 14px;
   }
   #truth {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   body {
     background-size: 70vw, 70vw;

@@ -37,6 +37,10 @@ function activateorangemode() {
     
     document.getElementById('buttonorange').classList.add('active');
     document.getElementById('buttonblue').classList.remove('active');
+
+    setTimeout(() => {
+        document.querySelector('#popup-mostlikelyto').classList.add('show');
+    }, 500);
     
     apiurl = 'https://api.truthordarebot.xyz/v1/paranoia';
     fetchTruth();
@@ -51,28 +55,60 @@ function activatebluemode() {
     
     document.getElementById('buttonblue').classList.add('active');
     document.getElementById('buttonorange').classList.remove('active');
+
+    setTimeout(() => {
+        document.querySelector('#popup-deeptalks').classList.add('show');
+    }, 500);
     
     apiurl = 'https://api.truthordarebot.xyz/v1/truth';
     fetchTruth();
 }
 document.getElementById('buttonblue').addEventListener('click', activatebluemode);
 
+document.querySelectorAll('.schliessen-button') .forEach(button => {
+    button.addEventListener('click', () => {
+        document.querySelector('#popup-mostlikelyto').classList.remove('show');
+        document.querySelector('#popup-deeptalks').classList.remove('show');
+    });
+});
+
 // Initial load
 fetchTruth();
 
-window.onload = function () {
-  const popup = document.getElementById("popup");
-  const schliessen = document.querySelector(".schliessen-button");
 
-  popup.style.display = "block";
+let touchstartX = 0;
+let touchstartY = 0;
+let blockSwipe = false;
 
-  schliessen.onclick = function () {
-    popup.style.display = "none";
-  };
+document.addEventListener('touchstart', (e) => {
+    touchstartX = e.touches[0].clientX;
+    touchstartY = e.touches[0].clientY;
+})
 
-  window.onclick = function (event) {
-    if (event.target === popup) {
-      popup.style.display = "none";
+document.addEventListener('touchmove', (e) => {
+    const touchendX = e.changedTouches[0].clientX;
+    const touchendY = e.changedTouches[0].clientY;
+    const diffX = touchendX - touchstartX;
+    const diffY = touchendY - touchstartY;
+    const threshold = window.innerWidth / 3; // Minimum distance to consider a swipe
+    const isHorizontalSwipe = Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > threshold;
+
+    const body = document.querySelector("body");
+
+    if(isHorizontalSwipe && !blockSwipe) {
+        touchstartX = 0
+        touchstartY = 0
+        blockSwipe = true
+        if (body.classList.contains('backgroundblue')) {
+            activateorangemode();
+        }
+        else if (body.classList.contains('backgroundorange')) {
+            activatebluemode();
+        }
     }
-  };
-};
+    
+})
+
+document.addEventListener('touchend', () => {
+    blockSwipe = false
+})
