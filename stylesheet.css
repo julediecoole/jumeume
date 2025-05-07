@@ -380,12 +380,38 @@ footer a:hover {
   font-weight: bold;
   padding: 6px 12px;
   border-radius: 0 0 0 10px;
-  position: absolute;
+  position: center;
   right: 0;
   top: 0;
   cursor: pointer;
 }
 #popup-mostlikelyto .schliessen-button {
+  background-color: #ff6c0a;
+}
+
+/* Container für den Dropdown */
+#languageSelect {
+  background-color: #ff6c0a;
+  color: #fff;
+  font-family: "Sukhumvit Set", sans-serif;
+  font-size: 1rem;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  appearance: none;
+  outline: none;
+  width: 180px;
+}
+
+/* Die Auswahloptionen */
+#languageSelect option {
+  background-color: #ff6c0a;
+  color: #fff;
+  padding: 8px 16px;
+}
+
+/* Hover-Effekt für Optionen */
+#languageSelect option:hover {
   background-color: #ff6c0a;
 }
 
