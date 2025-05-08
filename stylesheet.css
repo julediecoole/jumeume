@@ -1,20 +1,20 @@
+/* ----------------------------------------------------
+   Basis-Styles und Reset
+---------------------------------------------------- */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Body Style */
 :root {
   font-size: 20px;
 }
 
+/* ----------------------------------------------------
+   Body Style
+---------------------------------------------------- */
 body {
-  background-repeat: no-repeat, no-repeat;
-  background-position: left top, right bottom;
-  background-size: 50vw, 50vw;
-  color: white;
-  font-family: "Mansalva";
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -23,6 +23,11 @@ body {
   height: 100vh;
   text-align: center;
   text-transform: lowercase;
+  color: white;
+  font-family: "Mansalva";
+  background-repeat: no-repeat, no-repeat;
+  background-position: left top, right bottom;
+  background-size: 50vw, 50vw;
 }
 
 body.team {
@@ -30,57 +35,76 @@ body.team {
   background-size: 30vw, 30vw;
 }
 
-/* Font */
+/* ----------------------------------------------------
+   Typografie
+---------------------------------------------------- */
 h1 {
   font-size: 4.8rem;
-  color: white;
   font-family: "Mansalva";
   text-transform: lowercase;
+  color: white;
 }
 
-h2 {
+h2, .team-info h2 {
   font-size: 1.5rem;
-  color: white;
   font-family: "Mansalva";
   font-weight: normal;
+  color: white;
   text-transform: lowercase;
 }
 
 h3 {
   font-size: 1.5rem;
-  color: white;
-  font-family: "sukhumvit set";
+  font-family: "Sukhumvit Set";
   font-weight: bold;
-  text-transform: lowercase;
-}
-
-h4 {
-  font-size: 1rem;
   color: white;
-  font-family: "sukhumvit set";
-  font-weight: normal;
   text-transform: lowercase;
 }
 
-/* BG-Style */
+h4, .team-info h4 {
+  font-size: 1rem;
+  font-family: "Sukhumvit Set";
+  font-weight: normal;
+  color: white;
+  text-transform: lowercase;
+  margin: 0;
+}
+
+h5 {
+  font-size: 1rem;
+  font-family: "Sukhumvit Set";
+  font-weight: normal;
+  color: black;
+  text-transform: lowercase;
+}
+
+h6 {
+  font-size: 1.5rem;
+  font-family: "Sukhumvit Set";
+  font-weight: bold;
+  color: black;
+  text-transform: lowercase;
+}
+
+/* ----------------------------------------------------
+   Hintergrundfarben und Bilder
+---------------------------------------------------- */
 .backgroundblue {
   background-color: #043ad6;
-  background-image: url("svgs/handsleftorange.svg"),
-    url("svgs/handsrightorange.svg");
+  background-image: url("svgs/handsleftorange.svg"), url("svgs/handsrightorange.svg");
 }
 
 .backgroundorange {
   background-color: #ff6c0a;
-  background-image: url("svgs/handsleftblue.svg"),
-    url("svgs/handsrightblue.svg");
+  background-image: url("svgs/handsleftblue.svg"), url("svgs/handsrightblue.svg");
 }
 
-/* Header */
+/* ----------------------------------------------------
+   Header
+---------------------------------------------------- */
 header {
   background-color: white;
   position: relative;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100px;
   min-height: 100px;
@@ -91,43 +115,55 @@ header {
 }
 
 .header-content h1 {
-  margin-bottom: 0;
   font-size: 1.2rem;
-  color: #f26722;
-  font-family: Sukhumvit Set;
+  font-family: "Sukhumvit Set";
   font-weight: bold;
+  color: #f26722;
+  margin-bottom: 0;
 }
 
 .header-content p {
-  margin-top: 0;
   font-size: 0.65rem;
-  color: #f26722;
-  font-family: Sukhumvit Set;
+  font-family: "Sukhumvit Set";
   font-weight: bold;
+  color: #f26722;
+  margin-top: 0;
 }
+
 .logo-link {
-  text-decoration: none;
-  color: #f26722;
-  font-family: Sukhumvit Set;
+  font-family: "Sukhumvit Set";
   font-weight: bold;
+  color: #f26722;
+  text-decoration: none;
 }
+
 .logo-link:hover {
   text-decoration: none;
 }
 
+/* ----------------------------------------------------
+   Tabs
+---------------------------------------------------- */
+.tabs {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 .tab {
-  position: relative;
   appearance: none;
   background: transparent;
   border: none;
   height: 53px;
-  font-family: "sukhumvit set";
+  font-family: "Sukhumvit Set";
   font-weight: normal;
   font-size: 1rem;
   color: white;
   text-transform: lowercase;
   cursor: pointer;
   white-space: nowrap;
+  position: relative;
 }
 
 .tab svg {
@@ -135,14 +171,7 @@ header {
 }
 
 .tab:hover .tab-text {
-  text-decoration: underline; /* Hover-Effekt */
-}
-
-.tabs {
-  display: flex;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  text-decoration: underline;
 }
 
 .tab-text {
@@ -153,7 +182,6 @@ header {
   text-decoration: none;
 }
 
-/* Active Tab */
 .tab.active {
   z-index: 2;
 }
@@ -163,7 +191,9 @@ header {
   right: -1rem;
 }
 
-/* Main */
+/* ----------------------------------------------------
+   Main & Truth Bereich
+---------------------------------------------------- */
 main {
   display: flex;
   flex-direction: column;
@@ -174,23 +204,24 @@ main {
   height: 100%;
 }
 
-/* Truth-Stile */
 #truth {
   font-size: 3.5rem;
   max-width: 55%;
-  height: 100%;
   display: flex;
   align-items: center;
   flex-grow: 1;
   flex-basis: 100%;
+  height: 100%;
 }
 
-/* Button */
-#nextBtn {
+/* ----------------------------------------------------
+   Buttons
+---------------------------------------------------- */
+#nextBtn,
+.homepageBtn {
   padding: 6px 32px;
-  margin-bottom: 40px;
   font-size: 1.2rem;
-  font-family: "sukhumvit set";
+  font-family: "Sukhumvit Set";
   font-weight: bold;
   border: 5px solid white;
   background: transparent;
@@ -198,6 +229,9 @@ main {
   color: white;
   cursor: pointer;
   text-transform: lowercase;
+  text-decoration: none;
+  display: block;
+  margin: 50px auto 30px;
 }
 
 #nextBtn:hover {
@@ -207,17 +241,26 @@ main {
 
 .backgroundblue #nextBtn:hover {
   color: #f26722;
-  border-color: #043ad6;
 }
 
-/* Versteckte Elemente (für Animationen oder Sichtbarkeit) */
+.homepageBtn:hover {
+  background: white;
+  color: #ff6c0a;
+  text-decoration: none;
+}
+
+/* ----------------------------------------------------
+   Versteckte Elemente
+---------------------------------------------------- */
 .hidden {
   opacity: 0;
   pointer-events: none;
-  transform: translateY 10px;
+  transform: translateY(10px);
 }
 
-/* Footer */
+/* ----------------------------------------------------
+   Footer
+---------------------------------------------------- */
 footer {
   display: flex;
   width: 100%;
@@ -227,103 +270,60 @@ footer {
 
 footer a {
   color: white;
-  text-decoration: none;
-  font-family: "sukhumvit set";
   font-size: 1rem;
+  font-family: "Sukhumvit Set";
   font-weight: normal;
+  text-decoration: none;
 }
 
 footer a:hover {
   text-decoration: underline;
-  /* Animation */
   transition: opacity 0.5s ease, transform 0.5s ease;
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Team-Section */
+/* ----------------------------------------------------
+   Team Section
+---------------------------------------------------- */
 .team-section {
   text-align: center;
 }
 
-/* Titel "the team" */
 .team-section h1 {
   font-size: 3.45rem;
-  margin-bottom: 40px;
-  color: white;
-  font-family: "mansalva";
+  font-family: "Mansalva";
   font-weight: normal;
+  color: white;
+  margin-bottom: 40px;
   text-transform: lowercase;
 }
 
-/* Team-Member-Container */
 .team-members {
   display: flex;
   justify-content: center;
-  gap: 150px; /* Abstand zwischen Team */
+  gap: 150px;
   margin-bottom: 40px;
 }
 
-/* Einzelnes Mitglied */
 .team-member {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  font-family: "Sukhumvit Set";
   color: white;
-  font-family: "sukhumvit set";
 }
 
-/* Team-Bilder */
 .team-member img {
   height: 176px;
-  margin-bottom: 10px; /* Abstand Bild und Text */
+  margin-bottom: 10px;
 }
 
-/* (Name und Beschreibung) */
-.team-info {
-  text-align: center;
-}
-
-/* Name */
-.team-info h2 {
-  font-size: 2rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
-}
-
-/* Beschreibung */
-.team-info h4 {
-  font-size: 1.2rem;
-  margin: 0;
-  font-weight: normal;
-}
-
-/* Button Homepage */
-.homepageBtn {
-  display: block;
-  margin: 50px auto 30px;
-  padding: 6px 32px;
-  font-size: 1.2rem;
-  font-family: "sukhumvit set";
-  font-weight: bold;
-  border: 5px solid white;
-  background: transparent;
-  border-radius: 50px;
-  color: white;
-  cursor: pointer;
-  text-transform: lowercase;
-  text-decoration: none;
-}
-
-.homepageBtn:hover {
-  background: white;
-  color: #ff6c0a;
-  text-decoration: none;
-}
-
-/* Pop-up Overlay */
+/* ----------------------------------------------------
+   Overlay Popup
+---------------------------------------------------- */
 .popup-fenster {
   opacity: 0;
   pointer-events: none;
@@ -345,54 +345,54 @@ footer a:hover {
   pointer-events: all;
 }
 
-/* Pop-up Inhalt */
 .popup-inhalt {
   background-color: white;
-  padding: 30px;
-  border-radius: 8px;
+  border-radius: 3px;
   width: 90%;
   max-width: 500px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  font-family: sans-serif;
   position: relative;
-  font-family: 'Sukhumvit Set', sans-serif;
+  overflow: hidden;
 }
 
-/* Überschrift */
-.popup-inhalt h2 {
-  font-size: 24px;
-  color: black;
-  margin-bottom: 16px;
+.popup-inhalt::before {
+  content: "";
+  display: block;
+  background-color: #0033cc;
+  height: 40px;
+  width: 100%;
 }
 
-/* Text */
+.popup-inhalt .content {
+  padding: 50px 16px 50px 16px;
+}
+
 .popup-inhalt p {
-  font-size: 16px;
   color: #111;
   line-height: 1.6;
-  margin-bottom: 12px;
+  margin-bottom: 50px;
 }
 
-/* Schliessen-Button */
 .schliessen-button {
-  color: white;
-  background-color: #043ad6;
-  font-size: 28px;
-  font-weight: bold;
-  padding: 6px 12px;
-  border-radius: 0 0 0 10px;
-  position: center;
-  right: 0;
+  position: absolute;
   top: 0;
+  right: 1rem;
+  font-size: 2rem;
+  font-family: "Mansalva";
+  font-weight: bold;
+  color: white;
+  background: none;
+  border: none;
   cursor: pointer;
 }
-#popup-mostlikelyto .schliessen-button {
-  background-color: #ff6c0a;
-}
 
-/* Container für den Dropdown */
+/* ----------------------------------------------------
+   Sprach-Auswahl
+---------------------------------------------------- */
 #languageSelect {
   background-color: #ff6c0a;
-  color: #fff;
+  color: white;
   font-family: "Sukhumvit Set", sans-serif;
   font-size: 1rem;
   padding: 8px 16px;
@@ -403,59 +403,71 @@ footer a:hover {
   width: 180px;
 }
 
-/* Die Auswahloptionen */
 #languageSelect option {
   background-color: #ff6c0a;
-  color: #fff;
+  color: white;
   padding: 8px 16px;
 }
 
-/* Hover-Effekt für Optionen */
 #languageSelect option:hover {
   background-color: #ff6c0a;
 }
 
-@media (max-width:1000px) {
+/* ----------------------------------------------------
+   Responsive Design
+---------------------------------------------------- */
+@media (max-width: 1000px) {
   :root {
     font-size: 14px;
   }
-  #truth {
-    font-size: 2.5rem;
-  }
+
   body {
     background-size: 70vw, 70vw;
   }
+
   body.team {
     background-size: 60vw, 60vw;
   }
+
+  #truth {
+    font-size: 2.5rem;
+  }
+
   .tab {
     height: 30px;
-  } 
+  }
+
   header {
     justify-content: flex-start;
     padding: 0 20px;
   }
+
   .team-members {
     flex-direction: column;
-    gap: 20px; /* Abstand zwischen Team */
+    gap: 20px;
   }
+
   .team-member img {
     height: 90px;
   }
+
   .team-section h1 {
     margin-bottom: 20px;
   }
+
   .homepageBtn {
-    margin: 10px auto 10px;
+    margin: 10px auto;
     padding: 0;
     border: none;
     text-decoration: underline;
     font-weight: 400;
     font-size: 1rem;
   }
+
   footer {
     justify-content: center;
   }
+
   footer a {
     text-decoration: underline;
   }
