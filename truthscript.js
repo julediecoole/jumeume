@@ -36,48 +36,63 @@ async function fetchTruth() {
 
 document.getElementById('nextBtn').addEventListener('click', fetchTruth);
 
-// Wechsel auf den Orange-Modus
-function activateorangemode() {
-    const body = document.querySelector("body");
-    body.classList.remove('backgroundblue');
-    body.classList.add('backgroundorange');
-    
-    document.getElementById('buttonorange').classList.add('active');
-    document.getElementById('buttonblue').classList.remove('active');
+// Beim ersten Seitenbesuch das blaue Popup anzeigen
+window.addEventListener('DOMContentLoaded', () => {
+  const hasSeenDeeptalk = localStorage.getItem('popupSeen_deeptalks');
 
+  if (!hasSeenDeeptalk) {
     setTimeout(() => {
-        document.querySelector('#popup-mostlikelyto').classList.add('show');
+      document.querySelector('#popup-deeptalks').classList.add('show');
     }, 500);
-    
-    apiurl = 'https://api.truthordarebot.xyz/v1/paranoia';
-    fetchTruth();
+    localStorage.setItem('popupSeen_deeptalks', 'true');
+  }
+});
+
+// Orange-Modus aktivieren
+function activateorangemode() {
+  const body = document.querySelector("body");
+  body.classList.remove('backgroundblue');
+  body.classList.add('backgroundorange');
+
+  document.getElementById('buttonorange').classList.add('active');
+  document.getElementById('buttonblue').classList.remove('active');
+
+  // Popup nur beim ersten Mal zeigen
+  const hasSeenMostLikely = localStorage.getItem('popupSeen_mostlikelyto');
+  if (!hasSeenMostLikely) {
+    setTimeout(() => {
+      document.querySelector('#popup-mostlikelyto').classList.add('show');
+    }, 500);
+    localStorage.setItem('popupSeen_mostlikelyto', 'true');
+  }
+
+  apiurl = 'https://api.truthordarebot.xyz/v1/paranoia';
+  fetchTruth();
 }
 document.getElementById('buttonorange').addEventListener('click', activateorangemode);
 
-// Wechsel auf den Blau-Modus
+// Blau-Modus aktivieren
 function activatebluemode() {
-    const body = document.querySelector("body");
-    body.classList.remove('backgroundorange');
-    body.classList.add('backgroundblue');
-    
-    document.getElementById('buttonblue').classList.add('active');
-    document.getElementById('buttonorange').classList.remove('active');
+  const body = document.querySelector("body");
+  body.classList.remove('backgroundorange');
+  body.classList.add('backgroundblue');
 
-    setTimeout(() => {
-        document.querySelector('#popup-deeptalks').classList.add('show');
-    }, 500);
-    
-    apiurl = 'https://api.truthordarebot.xyz/v1/truth';
-    fetchTruth();
+  document.getElementById('buttonblue').classList.add('active');
+  document.getElementById('buttonorange').classList.remove('active');
+
+  // Zeige Popup NICHT nochmal (wurde beim Laden der Seite schon gezeigt)
+  apiurl = 'https://api.truthordarebot.xyz/v1/truth';
+  fetchTruth();
 }
 document.getElementById('buttonblue').addEventListener('click', activatebluemode);
 
-document.querySelectorAll('.schliessen-button') .forEach(button => {
-    button.addEventListener('click', () => {
-        document.querySelector('#popup-mostlikelyto').classList.remove('show');
-        document.querySelector('#popup-deeptalks').classList.remove('show');
-    });
+// Popup schließen
+document.querySelectorAll('.schliessen-button').forEach(button => {
+  button.addEventListener('click', () => {
+    button.closest('.popup-fenster').classList.remove('show');
+  });
 });
+
 
 // Initial load
 fetchTruth();

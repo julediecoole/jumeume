@@ -9,21 +9,21 @@
   <!-- Externe CSS-Datei -->
   <link rel="stylesheet" href="stylesheet.css">
 
-  <!-- Font -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap" rel="stylesheet">
 </head>
 
 <body class="backgroundblue">
-  <!-- Fester Seitenkopf mit Titel und Navigation -->
-<header>
-  <div class="header-content">
-    <h1><a href="truth.html" class="logo-link">conversations</a></h1>
-    <p>your website for deeptalks</p>
-  </div>
+  <!-- Header: Titel & Navigation -->
+  <header>
+    <div class="header-content">
+      <h1><a href="truth.html" class="logo-link">conversations</a></h1>
+      <p>your website for deeptalks</p>
+    </div>
 
-    <!-- Navigations-Tabs im Header -->
+    <!-- Tabs -->
     <div class="tabs">
-      <!-- Aktiver Tab: Deeptalk -->
+      <!-- Aktiver Tab -->
       <button id="buttonblue" class="active tab">
         <span class="tab-text">deeptalk</span>
         <svg viewBox="0 0 223 53" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +33,7 @@
         </svg>
       </button>
 
-      <!-- Zweiter Tab: Who would rather... -->
+      <!-- Zweiter Tab -->
       <button id="buttonorange" class="tab">
         <span class="tab-text">most likely to</span>
         <svg viewBox="0 0 203 53" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,52 +44,58 @@
     </div>
   </header>
 
-  <!-- Popup-Fenster: deeptalks-->
+  <!-- Popup: Deeptalk -->
   <div id="popup-deeptalks" class="popup-fenster">
     <div class="popup-inhalt">
       <span class="schliessen-button">&times;</span>
       <h6>deeptalks!</h6>
-      <h5>time to get awkward, wild, and maybe just a little bit scandalous. we’re diving into questions that’ll make you blush, laugh, and question all your life choices.<br>
-      share your secrets, spill the tea, and let’s get weirdly real. one deep question at a time: no fake answers, no hiding behind "i don't know".<br>
-      when you’ve spilled enough tea (or trauma), hit <strong>next</strong> for the next question.</h5>
+      <h5>
+        time to get awkward, wild, and maybe just a little bit scandalous. we’re diving into questions that’ll make you
+        blush, laugh, and question all your life choices.<br>
+        share your secrets, spill the tea, and let’s get weirdly real. one deep question at a time: no fake answers, no
+        hiding behind "i don't know".<br>
+        when you’ve spilled enough tea (or trauma), hit <strong>next</strong> for the next question.
+      </h5>
     </div>
   </div>
 
-  <!-- Popup-Fenster: Who's most likely to...& -->
+  <!-- Popup: Most Likely To -->
   <div id="popup-mostlikelyto" class="popup-fenster">
     <div class="popup-inhalt">
       <span class="schliessen-button">&times;</span>
       <h6>"who’s most likely to…?"</h6>
-      <h5> point fingers, start debates, maybe cause some chaos — it’s all part of the fun! <br>
-      talk it out (or shout it out), then smash <strong>next</strong> to unleash the next ridiculous question.<br>
-      warning: you might discover things you can never unknow about your friends.</h5>
+      <h5>
+        point fingers, start debates, maybe cause some chaos — it’s all part of the fun! <br>
+        talk it out (or shout it out), then smash <strong>next</strong> to unleash the next ridiculous question.<br>
+        warning: you might discover things you can never unknow about your friends.
+      </h5>
     </div>
   </div>
 
   <main>
-    <!-- Sprachauswahl -->
+    <!-- Sprache auswählen -->
     <label for="languageSelect">language:</label>
     <select id="languageSelect">
-      <option value="en" selected> english</option>
+      <option value="en" selected>english</option>
       <option value="de">deutsch</option>
       <option value="fr">français</option>
     </select>
 
-    <!-- Bereich für die angezeigte "Wahrheit" -->
-  <div id="truth">
-    <p>loading...</p>
-  </div>
+    <!-- Wahrheit wird hier geladen -->
+    <div id="truth">
+      <p>loading...</p>
+    </div>
 
-  <!-- Button zum Laden der nächsten Wahrheit -->
-  <button id="nextBtn">next</button>
+    <!-- Nächste Frage -->
+    <button id="nextBtn">next</button>
   </main>
 
-  <!-- Footer mit Links -->
+  <!-- Footer -->
   <footer>
     <a href="team.html">team</a>
   </footer>
 
-  <!-- Externes JavaScript -->
+  <!-- Externes JS -->
   <script src="truthscript.js"></script>
 </body>
 
