@@ -9,6 +9,8 @@
 
 :root {
   font-size: 20px;
+  --color-blue: #0033cc;
+  --color-orange: #ff6c0a;
 }
 
 /* ----------------------------------------------------
@@ -93,13 +95,13 @@ h6 {
    Hintergrundfarben und Bilder
 ---------------------------------------------------- */
 .backgroundblue {
-  background-color: #043ad6;
+  background-color: var(--color-blue);
   background-image: url("svgs/handsleftorange.svg"),
     url("svgs/handsrightorange.svg");
 }
 
 .backgroundorange {
-  background-color: #ff6c0a;
+  background-color: var(--color-orange);
   background-image: url("svgs/handsleftblue.svg"),
     url("svgs/handsrightblue.svg");
 }
@@ -175,6 +177,14 @@ header {
   height: 100%;
 }
 
+#buttonblue svg path {
+  fill: var(--color-blue);
+}
+
+#buttonorange svg path {
+  fill: var(--color-orange);
+}
+
 .tab:hover .tab-text {
   text-decoration: underline;
 }
@@ -239,19 +249,14 @@ main {
   margin: 50px auto 30px;
 }
 
-#nextBtn:hover {
-  color: #043ad6;
-  border-color: #043ad6;
+#nextBtn:hover, .homepageBtn:hover {
+  background: white;
+  color: var(--color-orange);
+  text-decoration: none;
 }
 
 .backgroundblue #nextBtn:hover {
-  color: #f26722;
-}
-
-.homepageBtn:hover {
-  background: white;
-  color: #ff6c0a;
-  text-decoration: none;
+  color: var(--color-blue);
 }
 
 /* ----------------------------------------------------
@@ -383,9 +388,13 @@ footer a:hover {
 .popup-inhalt::before {
   content: "";
   display: block;
-  background-color: #0033cc;
+  background-color: var(--color-blue);
   height: 40px;
   width: 100%;
+}
+
+#popup-mostlikelyto .popup-inhalt::before {
+  background-color: var(--color-orange);
 }
 
 .popup-inhalt .content {
@@ -416,23 +425,35 @@ footer a:hover {
    Sprach-Auswahl
 ---------------------------------------------------- */
 #languageSelect {
-  font-family: "Sukhumvit Set", sans-serif;
+  padding: 6px 32px;
   font-size: 1rem;
-  padding: px 4px;
-  border: 2px solid white;
+  font-family: "Sukhumvit Set";
+  background: var(--color-blue);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  text-transform: lowercase;
+  text-decoration: none;
+  display: block;
+  margin: 50px auto 30px;
   appearance: none;
   outline: none;
-  width: 180px;
+  text-align: center;
+}
+
+.backgroundblue #languageSelect {
+  background: var(--color-orange);
 }
 
 #languageSelect option {
-  background-color: #ff6c0a;
+  background-color: var(--color-orange);
   color: white;
   padding: 8px 16px;
 }
 
 #languageSelect option:hover {
-  background-color: #ff6c0a;
+  background-color: var(--color-orange);
 }
 
 /* ----------------------------------------------------

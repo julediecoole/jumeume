@@ -2,7 +2,7 @@ let apiurl = 'https://api.truthordarebot.xyz/v1/truth';
 
 async function fetchTruth() {
     const button = document.getElementById('nextBtn');
-    // neu so?
+    // Sprache aus dem Dropdown-Menü holen
     const langSelect = document.getElementById('languageSelect');
     const selectedLang = langSelect ? langSelect.value : 'en';
     
@@ -35,16 +35,17 @@ async function fetchTruth() {
 }
 
 document.getElementById('nextBtn').addEventListener('click', fetchTruth);
+document.getElementById('languageSelect').addEventListener('change', fetchTruth);
 
 // Beim ersten Seitenbesuch das blaue Popup anzeigen
 window.addEventListener('DOMContentLoaded', () => {
-  const hasSeenDeeptalk = localStorage.getItem('popupSeen_deeptalks');
+  const hasSeenDeeptalk = sessionStorage.getItem('popupSeen_deeptalks');
 
   if (!hasSeenDeeptalk) {
     setTimeout(() => {
       document.querySelector('#popup-deeptalks').classList.add('show');
     }, 500);
-    localStorage.setItem('popupSeen_deeptalks', 'true');
+    sessionStorage.setItem('popupSeen_deeptalks', 'true');
   }
 });
 
@@ -58,12 +59,12 @@ function activateorangemode() {
   document.getElementById('buttonblue').classList.remove('active');
 
   // Popup nur beim ersten Mal zeigen
-  const hasSeenMostLikely = localStorage.getItem('popupSeen_mostlikelyto');
+  const hasSeenMostLikely = sessionStorage.getItem('popupSeen_mostlikelyto');
   if (!hasSeenMostLikely) {
     setTimeout(() => {
       document.querySelector('#popup-mostlikelyto').classList.add('show');
     }, 500);
-    localStorage.setItem('popupSeen_mostlikelyto', 'true');
+    sessionStorage.setItem('popupSeen_mostlikelyto', 'true');
   }
 
   apiurl = 'https://api.truthordarebot.xyz/v1/paranoia';
