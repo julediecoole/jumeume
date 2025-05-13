@@ -425,7 +425,7 @@ footer a:hover {
    Sprach-Auswahl
 ---------------------------------------------------- */
 #languageSelect {
-  padding: 6px 32px;
+  padding: 5px 27px;
   font-size: 1rem;
   font-family: "Sukhumvit Set";
   background: var(--color-blue);
