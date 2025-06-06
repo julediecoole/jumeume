@@ -3,7 +3,7 @@ Eine Website für Deep-Talks – perfekt für späte WG-Abende oder Dates. Zwei 
 
 Jule: Wegen Fehlern bei zu schneller und häufiger Abfrage der API hat der Button jetzt einen Cooldown. Am schwierigsten war es, Hintergrund und Farben je nach aktivem Modus dynamisch anzupassen und die Tabs zum Funktionieren zu bringen. 
 
-Melina: Herausfordernd war die Integration der Swipe-Funktion für die mobile Darstellung. Ausserdem stellte das Dropdown-Menü zur Sprachauswahl eine Challange dar, da Inhalte automatisch und korrekt umgeschaltet werden mussten.
+Melina: Herausfordernd war die Integration der Swipe-Funktion für die mobile Darstellung. Ausserdem stellte das Dropdown-Menü zur Sprachauswahl eine Challenge dar, da Inhalte automatisch und korrekt umgeschaltet werden mussten.
 
 KI-Reflektion:
 
