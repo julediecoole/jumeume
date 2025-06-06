@@ -217,6 +217,7 @@ main {
   background-position: center;
   flex: 1;
   height: 100%;
+  width: 100vw;
 }
 
 #truth {
@@ -524,6 +525,9 @@ footer a:hover {
     text-decoration: underline;
   }
 
-  #languageSelect {
+  .language-container{
     justify-content: center;
+    display: flex;
+    padding-left: 0;
   }
+}
