@@ -424,37 +424,46 @@ footer a:hover {
 /* ----------------------------------------------------
    Sprach-Auswahl
 ---------------------------------------------------- */
+.language-container {
+  width: 100%;
+  text-align: left;
+  padding-left: 30px; 
+  margin: 30px 10px;
+}
+
 #languageSelect {
-  padding: 5px 27px;
-  font-size: 1rem;
-  font-family: "Sukhumvit Set";
-  background: var(--color-blue);
+  display: inline-block;
+  background: none;
   border: none;
-  border-radius: 50px;
   color: white;
-  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Sukhumvit Set", sans-serif;
   text-transform: lowercase;
-  text-decoration: none;
-  display: block;
-  margin: 50px auto 30px;
-  appearance: none;
+  cursor: pointer;
+  padding: 0;
   outline: none;
-  text-align: center;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
-.backgroundblue #languageSelect {
-  background: var(--color-orange);
+#languageSelect:hover {
+  text-decoration: underline;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-#languageSelect option {
+
+/* #languageSelect option {
   background-color: var(--color-orange);
-  color: white;
+  color: transparent;
   padding: 8px 16px;
 }
 
 #languageSelect option:hover {
-  background-color: var(--color-orange);
-}
+  background-color: var(--color-orange} */
+
 
 /* ----------------------------------------------------
    Responsive Design
@@ -514,4 +523,7 @@ footer a:hover {
   footer a {
     text-decoration: underline;
   }
-}
+
+  #languageSelect {
+    justify-content: center;
+  }
